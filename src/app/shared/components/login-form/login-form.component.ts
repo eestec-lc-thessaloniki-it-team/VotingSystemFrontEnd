@@ -1,4 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Observable} from 'rxjs';
+import {TranslationSection} from '../../models/translations';
 
 @Component({
     selector: 'app-login-form',
@@ -6,6 +8,9 @@ import {Component, OnInit} from '@angular/core';
     styleUrls: ['./login-form.component.scss']
 })
 export class LoginFormComponent implements OnInit {
+
+    @Input()
+    translations: TranslationSection;
 
     constructor() {
     }

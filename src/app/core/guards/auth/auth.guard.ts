@@ -14,7 +14,6 @@ export class AuthGuard implements CanActivate {
     canActivate(next: ActivatedRouteSnapshot,
                 state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
         const isAuthenticated: boolean = this.auth.isAuthenticated();
-        console.log(state.url);
 
         if (state.url.startsWith('/dummy')) {
             if (!isAuthenticated) {

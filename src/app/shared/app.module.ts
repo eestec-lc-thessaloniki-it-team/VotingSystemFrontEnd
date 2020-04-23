@@ -9,6 +9,7 @@ import {HomePageComponent} from './pages/home/home-page.component';
 import {LoginPageComponent} from './pages/login/login-page.component';
 import {DummyLoggedInComponent} from './pages/dummy-logged-in/dummy-logged-in.component';
 import {HttpClientModule} from '@angular/common/http';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
     declarations: [

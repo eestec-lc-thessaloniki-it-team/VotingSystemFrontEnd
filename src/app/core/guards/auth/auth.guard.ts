@@ -15,20 +15,44 @@ export class AuthGuard implements CanActivate {
                 state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
         const isAuthenticated: boolean = this.auth.isAuthenticated();
 
-        if (state.url.startsWith('/dummy')) {
-            if (!isAuthenticated) {
-                this.router.navigate(['login']);
-                return false;
-            }
-            return true;
-        } else if (state.url.startsWith('/login')) {
-            if (isAuthenticated) {
-                this.router.navigate(['dummy']);
-                return false;
-            }
-            return true;
+        switch (state.url.indexOf('?') !== -1 ? state.url.substring(0, state.url.indexOf('?')) : state.url) {
+            case '/':
+                return this.handleHomePage(isAuthenticated);
+            case '/login':
+            case '/register':
+                return this.handleLoginAndRegister(isAuthenticated);
+            case '/dummy':
+            case '/poll':
+            case '/results':
+            case '/vote':
+                return this.handleProtectedPage(isAuthenticated);
         }
         return false;
+    }
+
+    private handleHomePage(isAuthenticated: boolean): boolean {
+        if (isAuthenticated) {
+            this.router.navigate(['dummy']);
+        } else {
+            this.router.navigate(['login']);
+        }
+        return false;
+    }
+
+    private handleProtectedPage(isAuthenticated: boolean): boolean {
+        if (!isAuthenticated) {
+            this.router.navigate(['login']);
+            return false;
+        }
+        return true;
+    }
+
+    private handleLoginAndRegister(isAuthenticated: boolean): boolean {
+        if (isAuthenticated) {
+            this.router.navigate(['dummy']);
+            return false;
+        }
+        return true;
     }
 
 }

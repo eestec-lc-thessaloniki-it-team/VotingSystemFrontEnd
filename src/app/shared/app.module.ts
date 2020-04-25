@@ -10,6 +10,10 @@ import {LoginPageComponent} from './pages/login/login-page.component';
 import {DummyLoggedInComponent} from './pages/dummy-logged-in/dummy-logged-in.component';
 import {HttpClientModule} from '@angular/common/http';
 import {MatListModule} from '@angular/material/list';
+import { PollCreatePageComponent } from './pages/poll-create/poll-create-page.component';
+import { PollVotePageComponent } from './pages/poll-vote/poll-vote-page.component';
+import { RegisterPageComponent } from './pages/register/register-page.component';
+import { PollResultsPageComponent } from './pages/poll-results/poll-results-page.component';
 
 @NgModule({
     declarations: [
@@ -17,7 +21,11 @@ import {MatListModule} from '@angular/material/list';
         LoginFormComponent,
         HomePageComponent,
         LoginPageComponent,
-        DummyLoggedInComponent
+        DummyLoggedInComponent,
+        PollCreatePageComponent,
+        PollVotePageComponent,
+        RegisterPageComponent,
+        PollResultsPageComponent
     ],
     imports: [
         HttpClientModule,

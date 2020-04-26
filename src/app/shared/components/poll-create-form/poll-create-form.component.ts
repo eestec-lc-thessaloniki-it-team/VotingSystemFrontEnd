@@ -2,7 +2,6 @@ import {Component, Input, OnInit} from '@angular/core';
 import {TranslationSection} from '../../models/translations';
 import {FormArray, FormBuilder, FormGroup} from '@angular/forms';
 import {BackendService} from '../../../core/services/auth/backend.service';
-import {Router} from '@angular/router';
 import {PollCreateResponse} from '../../models/PollCreateResponse';
 
 @Component({

@@ -1,0 +1,26 @@
+<div *ngIf="translations" class="register-form">
+    <h1>{{translations['title']}}</h1>
+
+    <form (ngSubmit)="onSubmit(registerForm.value)" [formGroup]="registerForm">
+
+        <mat-form-field class="full-width">
+            <mat-label>Full Name</mat-label>
+            <input formControlName="password" matInput placeholder="Enter your full name" type="text">
+        </mat-form-field>
+        <mat-form-field class="full-width">
+            <mat-label>Email</mat-label>
+            <input formControlName="mail" matInput placeholder="Enter your email">
+        </mat-form-field>
+        <mat-form-field class="full-width">
+            <mat-label>Password</mat-label>
+            <input formControlName="password" matInput placeholder="Enter your password" type="password">
+        </mat-form-field>
+        <mat-form-field class="full-width">
+            <mat-label>Repeat Password</mat-label>
+            <input formControlName="passwordRe" matInput placeholder="Re-enter your password" type="password">
+        </mat-form-field>
+
+        <button mat-raised-button type="submit">Register</button>
+
+    </form>
+</div>

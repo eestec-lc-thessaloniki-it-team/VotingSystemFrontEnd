@@ -23,8 +23,9 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatTooltipModule} from '@angular/material/tooltip';
-import { PollVoteFormComponent } from './components/poll-vote-form/poll-vote-form.component';
+import {PollVoteFormComponent} from './components/poll-vote-form/poll-vote-form.component';
 import {MatRadioModule} from '@angular/material/radio';
+import {RegisterFormComponent} from './components/register-form/register-form.component';
 
 @NgModule({
     declarations: [
@@ -39,7 +40,8 @@ import {MatRadioModule} from '@angular/material/radio';
         PollResultsPageComponent,
         LogoutComponent,
         PollCreateFormComponent,
-        PollVoteFormComponent
+        PollVoteFormComponent,
+        RegisterFormComponent
     ],
     imports: [
         HttpClientModule,

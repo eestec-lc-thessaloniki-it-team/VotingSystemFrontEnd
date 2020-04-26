@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {TranslationSection} from '../../models/translations';
+import {I18nService} from '../../../core/services/i18n/i18n.service';
 
 @Component({
     selector: 'app-register',
@@ -7,10 +9,15 @@ import {Component, OnInit} from '@angular/core';
 })
 export class RegisterPageComponent implements OnInit {
 
-    constructor() {
+    registerTranslations: TranslationSection;
+
+    constructor(private i18n: I18nService) {
     }
 
     ngOnInit(): void {
+        this.i18n.getTranslationsSection('register').then((section) => {
+            this.registerTranslations = section;
+        });
     }
 
 }

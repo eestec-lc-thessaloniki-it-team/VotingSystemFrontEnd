@@ -12,7 +12,8 @@
             <div class="option-field">
                 <input [formControl]="option" matInput>
 
-                <button (click)="removeOption(i)" [disabled]="options.length < 3" aria-label="Example icon-button with a heart icon"
+                <button (click)="removeOption(i)" [disabled]="options.length < 3"
+                        aria-label="Example icon-button with a heart icon"
                         mat-icon-button tabindex="-1" type="button">
                     <mat-icon>remove_circle_outline</mat-icon>
                 </button>
@@ -30,15 +31,17 @@
         <div class="full-width button-container">
             <button mat-raised-button type="submit">Create Poll</button>
         </div>
-        <div class="full-width shared-link" *ngIf="sharedLink">
+        <div *ngIf="sharedLink" class="full-width shared-link">
             <mat-form-field class="full-width">
                 <mat-label>Shared Link</mat-label>
                 <input (click)="copySharedLink" [value]="sharedLink" disabled="true" matInput type="text">
             </mat-form-field>
-            <button (click)="copySharedLink()" matTooltip="Click to copy" aria-label="Example icon-button with a heart icon" mat-icon-button tabindex="-1" type="button">
+            <button (click)="copySharedLink()" aria-label="Example icon-button with a heart icon"
+                    mat-icon-button matTooltip="Click to copy" tabindex="-1" type="button">
                 <mat-icon>file_copy</mat-icon>
             </button>
-            <button matTooltip="Open in new Tab" aria-label="Example icon-button with a heart icon" mat-icon-button tabindex="-1" type="button" (click)="goToPoll()">
+            <button (click)="goToPoll()" aria-label="Example icon-button with a heart icon" mat-icon-button
+                    matTooltip="Open in new Tab" tabindex="-1" type="button">
                 <mat-icon>launch</mat-icon>
             </button>
         </div>

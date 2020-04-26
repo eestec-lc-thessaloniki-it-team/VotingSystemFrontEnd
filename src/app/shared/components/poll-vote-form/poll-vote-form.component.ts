@@ -4,7 +4,6 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {BackendService} from '../../../core/services/auth/backend.service';
 import {PollGetResponse} from '../../models/PollGetResponse';
 import {FormBuilder, FormGroup} from '@angular/forms';
-import {PollCreateResponse} from '../../models/PollCreateResponse';
 import {VoteCreateResponse} from '../../models/VoteCreateResponse';
 
 @Component({

@@ -26,6 +26,11 @@ export class BackendService {
             this.domain + '/login', loginData).toPromise();
     }
 
+    register(registerData): Promise<LoginResponse> {
+        return this.httpClient.post<LoginResponse>(
+            this.domain + '/register', registerData).toPromise();
+    }
+
     createPoll(pollData): Promise<PollCreateResponse> {
         return this.httpClient.post<PollCreateResponse>(
             this.domain + '/create-poll', pollData).toPromise();

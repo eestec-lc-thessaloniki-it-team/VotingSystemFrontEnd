@@ -8,5 +8,8 @@
     },
     "poll-vote": {
         "title": "Vote"
+    },
+    "register": {
+        "title": "Vote"
     }
 }

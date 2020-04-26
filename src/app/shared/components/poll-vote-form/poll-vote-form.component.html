@@ -4,7 +4,8 @@
 
     <form (ngSubmit)="onSubmit()" [formGroup]="pollVoteForm">
 
-        <mat-radio-group *ngFor="let option of poll.wrapper.object.options; let i = index;" aria-label="Select an option">
+        <mat-radio-group *ngFor="let option of poll.wrapper.object.options; let i = index;"
+                         aria-label="Select an option">
             <mat-radio-button (click)="change(i)" [checked]="i === selected" [value]="i">{{option}}</mat-radio-button>
         </mat-radio-group>
         <div class="full-width button-container">

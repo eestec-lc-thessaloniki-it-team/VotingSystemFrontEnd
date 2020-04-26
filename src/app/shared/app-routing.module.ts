@@ -13,10 +13,24 @@ import {PollVotePageComponent} from './pages/poll-vote/poll-vote-page.component'
 const routes: Routes = [
     {path: '', component: HomePageComponent, canActivate: [AuthGuard]},
     {path: 'login', component: LoginPageComponent, canActivate: [AuthGuard]},
+    {path: 'logout', component: LoginPageComponent, canActivate: [AuthGuard]},
     {path: 'register', component: RegisterPageComponent, canActivate: [AuthGuard]},
-    {path: 'poll', component: PollCreatePageComponent, canActivate: [AuthGuard]},
-    {path: 'results', component: PollResultsPageComponent, canActivate: [AuthGuard]},
-    {path: 'vote', component: PollVotePageComponent, canActivate: [AuthGuard]},
+    {
+        path: 'poll', canActivate: [AuthGuard], children: [
+            {
+                path: 'create',
+                component: PollCreatePageComponent
+            },
+            {
+                path: 'results',
+                component: PollResultsPageComponent
+            },
+            {
+                path: 'vote',
+                component: PollVotePageComponent
+            }
+        ]
+    },
     {path: 'dummy', component: DummyLoggedInComponent, canActivate: [AuthGuard]}
 ];
 

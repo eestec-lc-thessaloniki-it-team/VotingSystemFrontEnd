@@ -1,3 +1,18 @@
-<div class="login-form" *ngIf="translations">
+<div *ngIf="translations" class="login-form">
     <h1>{{translations['title']}}</h1>
+
+    <form (ngSubmit)="onSubmit(loginForm.value)" [formGroup]="loginForm">
+
+        <mat-form-field class="full-width">
+            <mat-label>Email</mat-label>
+            <input formControlName="mail" matInput placeholder="jane.doe@ic.fbi.gov">
+        </mat-form-field>
+        <mat-form-field class="full-width">
+            <mat-label>Password</mat-label>
+            <input formControlName="password" matInput placeholder="Password" type="password">
+        </mat-form-field>
+
+        <button mat-raised-button type="submit">Login</button>
+
+    </form>
 </div>

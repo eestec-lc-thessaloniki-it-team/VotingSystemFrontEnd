@@ -1,5 +1,9 @@
 {
     "login": {
         "title": "Voting"
+    },
+    "poll-create": {
+        "title": "Voting",
+        "option": "Option"
     }
 }

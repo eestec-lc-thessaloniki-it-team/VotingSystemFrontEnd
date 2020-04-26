@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {Observable} from 'rxjs';
 import {TranslationSection} from '../../models/translations';
 import {I18nService} from '../../../core/services/i18n/i18n.service';
 

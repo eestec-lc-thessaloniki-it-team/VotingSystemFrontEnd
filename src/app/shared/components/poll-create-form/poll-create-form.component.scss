@@ -1,0 +1,37 @@
+.create-poll-form {
+    form {
+        width: 80%;
+        margin: 0 auto;
+
+
+        .option-container {
+            text-align: left;
+            width: 50%;
+
+            .option-field {
+                display: flex;
+                flex-direction: row;
+            }
+        }
+
+        .full-width {
+            color: black;
+            width: 100%;
+        }
+
+        .half-width {
+            display: inline-block;
+            color: black;
+            width: 50%;
+            text-align: center;
+        }
+
+        .button-container {
+            text-align: center;
+        }
+
+        .shared-link {
+            display: block;
+        }
+    }
+}

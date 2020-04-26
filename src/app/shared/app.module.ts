@@ -9,11 +9,19 @@ import {HomePageComponent} from './pages/home/home-page.component';
 import {LoginPageComponent} from './pages/login/login-page.component';
 import {DummyLoggedInComponent} from './pages/dummy-logged-in/dummy-logged-in.component';
 import {HttpClientModule} from '@angular/common/http';
-import {MatListModule} from '@angular/material/list';
-import { PollCreatePageComponent } from './pages/poll-create/poll-create-page.component';
-import { PollVotePageComponent } from './pages/poll-vote/poll-vote-page.component';
-import { RegisterPageComponent } from './pages/register/register-page.component';
-import { PollResultsPageComponent } from './pages/poll-results/poll-results-page.component';
+import {PollCreatePageComponent} from './pages/poll-create/poll-create-page.component';
+import {PollVotePageComponent} from './pages/poll-vote/poll-vote-page.component';
+import {RegisterPageComponent} from './pages/register/register-page.component';
+import {PollResultsPageComponent} from './pages/poll-results/poll-results-page.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatButtonModule} from '@angular/material/button';
+import {LogoutComponent} from './pages/logout/logout.component';
+import {PollCreateFormComponent} from './components/poll-create-form/poll-create-form.component';
+import {MatIconModule} from '@angular/material/icon';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
     declarations: [
@@ -25,13 +33,23 @@ import { PollResultsPageComponent } from './pages/poll-results/poll-results-page
         PollCreatePageComponent,
         PollVotePageComponent,
         RegisterPageComponent,
-        PollResultsPageComponent
+        PollResultsPageComponent,
+        LogoutComponent,
+        PollCreateFormComponent
     ],
     imports: [
         HttpClientModule,
         BrowserModule,
         AppRoutingModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatInputModule,
+        MatFormFieldModule,
+        MatButtonModule,
+        MatIconModule,
+        MatSlideToggleModule,
+        MatCheckboxModule
     ],
     providers: [],
     bootstrap: [AppComponent]

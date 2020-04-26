@@ -1,0 +1,38 @@
+<div *ngIf="translations" class="create-poll-form">
+    <h1>{{translations['title']}}</h1>
+
+    <form (ngSubmit)="onSubmit(pollCreateForm.value)" [formGroup]="pollCreateForm">
+
+        <mat-form-field class="full-width">
+            <mat-label>Question</mat-label>
+            <input formControlName="question" matInput type="text">
+        </mat-form-field>
+        <mat-form-field *ngFor="let option of options.controls; let i=index" class="option-container">
+            <mat-label>{{translations['option'] + (i + 1)}}</mat-label>
+            <div class="option-field">
+                <input [formControl]="option" matInput>
+
+                <button (click)="removeOption(i)" [disabled]="options.length < 3" aria-label="Example icon-button with a heart icon"
+                        mat-icon-button tabindex="-1" type="button">
+                    <mat-icon>remove_circle_outline</mat-icon>
+                </button>
+            </div>
+        </mat-form-field>
+        <div class="half-width">
+            <button (click)="addOption()" color="warn" mat-mini-fab type="button"><span class="material-icons"
+                                                                                        tabindex="-1">add</span>
+            </button>
+        </div>
+        <div class="full-width">
+            <mat-slide-toggle class="half-width" formControlName="named">Unnamed/Named</mat-slide-toggle>
+            <mat-checkbox class="half-width" formControlName="unique">Unique Answers</mat-checkbox>
+        </div>
+        <div class="full-width button-container">
+            <button mat-raised-button type="submit">Create Poll</button>
+            <mat-form-field *ngIf="sharedLink" class="shared-link">
+                <mat-label>Shared Link</mat-label>
+                <input [value]="sharedLink" disabled="true" matInput type="text">
+            </mat-form-field>
+        </div>
+    </form>
+</div>

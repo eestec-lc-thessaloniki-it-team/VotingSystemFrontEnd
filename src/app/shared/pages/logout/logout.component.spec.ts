@@ -1,20 +1,20 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import {PollVotePageComponent} from './poll-vote-page.component';
+import {LogoutComponent} from './logout.component';
 
-describe('VotePollComponent', () => {
-    let component: PollVotePageComponent;
-    let fixture: ComponentFixture<PollVotePageComponent>;
+describe('LogoutComponent', () => {
+    let component: LogoutComponent;
+    let fixture: ComponentFixture<LogoutComponent>;
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [PollVotePageComponent]
+            declarations: [LogoutComponent]
         })
             .compileComponents();
     }));
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(PollVotePageComponent);
+        fixture = TestBed.createComponent(LogoutComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

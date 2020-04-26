@@ -17,7 +17,7 @@ export class PollCreateFormComponent implements OnInit {
     pollCreateForm: FormGroup;
     sharedLink: string;
 
-    constructor(private formBuilder: FormBuilder, private service: BackendService, private router: Router) {
+    constructor(private formBuilder: FormBuilder, private service: BackendService) {
         this.pollCreateForm = this.formBuilder.group({
             question: '',
             options_list: this.formBuilder.array([
@@ -42,7 +42,7 @@ export class PollCreateFormComponent implements OnInit {
         this.service.createPoll(pollData).then((response: PollCreateResponse) => {
             if (response.response === 200) {
                 this.pollCreateForm.reset();
-                this.sharedLink = 'http://localhost:4200/poll/vote?i=' + response.id;
+                this.sharedLink = 'http://localhost:4200/poll/vote?id=' + response.id;
             }
         });
     }

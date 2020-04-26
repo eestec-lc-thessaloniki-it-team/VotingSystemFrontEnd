@@ -3,6 +3,8 @@ import {HttpClient} from '@angular/common/http';
 import {AuthResponse} from '../../../shared/models/AuthResponse';
 import {LoginResponse} from '../../../shared/models/LoginResponse';
 import {PollCreateResponse} from '../../../shared/models/PollCreateResponse';
+import {PollGetResponse} from '../../../shared/models/PollGetResponse';
+import {VoteCreateResponse} from '../../../shared/models/VoteCreateResponse';
 
 @Injectable({
     providedIn: 'root'
@@ -27,6 +29,17 @@ export class BackendService {
     createPoll(pollData): Promise<PollCreateResponse> {
         return this.httpClient.post<PollCreateResponse>(
             this.domain + '/create-poll', pollData).toPromise();
+    }
+
+    getPoll(id): Promise<PollGetResponse> {
+        return this.httpClient.get<PollGetResponse>(
+            this.domain + '/poll?id=' + id + '&session_id=' + localStorage.getItem('s')).toPromise();
+    }
+
+    vote(voteObject): Promise<VoteCreateResponse> {
+        voteObject.session_id = localStorage.getItem('s');
+        return this.httpClient.post<VoteCreateResponse>(
+            this.domain + '/vote?id=' + voteObject.id, voteObject).toPromise();
     }
 
 }

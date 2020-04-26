@@ -23,6 +23,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { PollVoteFormComponent } from './components/poll-vote-form/poll-vote-form.component';
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
     declarations: [
@@ -36,7 +38,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
         RegisterPageComponent,
         PollResultsPageComponent,
         LogoutComponent,
-        PollCreateFormComponent
+        PollCreateFormComponent,
+        PollVoteFormComponent
     ],
     imports: [
         HttpClientModule,
@@ -51,7 +54,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
         MatIconModule,
         MatSlideToggleModule,
         MatCheckboxModule,
-        MatTooltipModule
+        MatTooltipModule,
+        MatRadioModule
     ],
     providers: [],
     bootstrap: [AppComponent]

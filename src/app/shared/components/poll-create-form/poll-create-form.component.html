@@ -29,10 +29,18 @@
         </div>
         <div class="full-width button-container">
             <button mat-raised-button type="submit">Create Poll</button>
-            <mat-form-field *ngIf="sharedLink" class="shared-link">
+        </div>
+        <div class="full-width shared-link" *ngIf="sharedLink">
+            <mat-form-field class="full-width">
                 <mat-label>Shared Link</mat-label>
-                <input [value]="sharedLink" disabled="true" matInput type="text">
+                <input (click)="copySharedLink" [value]="sharedLink" disabled="true" matInput type="text">
             </mat-form-field>
+            <button (click)="copySharedLink()" matTooltip="Click to copy" aria-label="Example icon-button with a heart icon" mat-icon-button tabindex="-1" type="button">
+                <mat-icon>file_copy</mat-icon>
+            </button>
+            <button matTooltip="Open in new Tab" aria-label="Example icon-button with a heart icon" mat-icon-button tabindex="-1" type="button" (click)="goToPoll()">
+                <mat-icon>launch</mat-icon>
+            </button>
         </div>
     </form>
 </div>

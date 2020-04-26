@@ -22,6 +22,7 @@ import {PollCreateFormComponent} from './components/poll-create-form/poll-create
 import {MatIconModule} from '@angular/material/icon';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
     declarations: [
@@ -49,7 +50,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
         MatButtonModule,
         MatIconModule,
         MatSlideToggleModule,
-        MatCheckboxModule
+        MatCheckboxModule,
+        MatTooltipModule
     ],
     providers: [],
     bootstrap: [AppComponent]

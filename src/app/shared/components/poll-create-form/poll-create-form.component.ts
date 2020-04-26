@@ -39,11 +39,10 @@ export class PollCreateFormComponent implements OnInit {
 
     onSubmit(pollData) {
         pollData.session_id = localStorage.getItem('s');
-        console.log(pollData);
         this.service.createPoll(pollData).then((response: PollCreateResponse) => {
             if (response.response === 200) {
                 this.pollCreateForm.reset();
-                this.sharedLink = 'http://localhost:4200/poll/vote/' + response.id;
+                this.sharedLink = 'http://localhost:4200/poll/vote?i=' + response.id;
             }
         });
     }
@@ -56,5 +55,22 @@ export class PollCreateFormComponent implements OnInit {
         this.options.removeAt(index);
     }
 
+    copySharedLink() {
+        const selBox = document.createElement('textarea');
+        selBox.style.position = 'fixed';
+        selBox.style.left = '0';
+        selBox.style.top = '0';
+        selBox.style.opacity = '0';
+        selBox.value = this.sharedLink;
+        document.body.appendChild(selBox);
+        selBox.focus();
+        selBox.select();
+        document.execCommand('copy');
+        document.body.removeChild(selBox);
+    }
+
+    goToPoll() {
+        window.open(this.sharedLink, '_blank');
+    }
 
 }

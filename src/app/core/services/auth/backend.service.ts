@@ -11,7 +11,8 @@ import {VoteCreateResponse} from '../../../shared/models/VoteCreateResponse';
 })
 export class BackendService {
 
-    domain = 'http://localhost:5000';
+    domain = 'http://localhost:5000'; // DEV
+    // domain = 'https://eestec.easyvote.ml:5000'; // PROD
 
     constructor(private httpClient: HttpClient) {
     }

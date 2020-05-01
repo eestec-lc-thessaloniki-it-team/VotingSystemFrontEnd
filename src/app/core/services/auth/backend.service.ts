@@ -50,6 +50,11 @@ export class BackendService {
             this.domain + '/results?id=' + id, body).toPromise();
     }
 
+    hasVote(id): Promise<AuthResponse> {
+        return this.httpClient.get<AuthResponse>(
+            this.domain + '/hasVote?poll_id=' + id + '&session_id=' + localStorage.getItem('s')).toPromise();
+    }
+
     vote(voteObject): Promise<VoteCreateResponse> {
         voteObject.session_id = localStorage.getItem('s');
         return this.httpClient.post<VoteCreateResponse>(

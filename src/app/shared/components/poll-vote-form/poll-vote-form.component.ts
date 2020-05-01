@@ -30,9 +30,15 @@ export class PollVoteFormComponent implements OnInit {
     ngOnInit() {
         this.activatedRoute.queryParams.subscribe(params => {
             this.id = params.id;
-            this.service.getPoll(this.id).then((response) => {
-                if (response.response === 200) {
-                    this.poll = response;
+            this.service.hasVote(this.id).then((resp) => {
+                if (resp.isValid) {
+                    this.service.getPoll(this.id).then((response) => {
+                        if (response.response === 200) {
+                            this.poll = response;
+                        }
+                    });
+                } else {
+                    this.router.navigate(['/poll/results']);
                 }
             });
         });

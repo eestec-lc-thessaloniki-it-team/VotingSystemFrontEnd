@@ -26,7 +26,9 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {PollVoteFormComponent} from './components/poll-vote-form/poll-vote-form.component';
 import {MatRadioModule} from '@angular/material/radio';
 import {RegisterFormComponent} from './components/register-form/register-form.component';
-import { PollResultsComponent } from './components/poll-results/poll-results.component';
+import {PollResultsComponent} from './components/poll-results/poll-results.component';
+import {IgxPieChartModule} from 'igniteui-angular-charts';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
     declarations: [
@@ -59,7 +61,9 @@ import { PollResultsComponent } from './components/poll-results/poll-results.com
         MatSlideToggleModule,
         MatCheckboxModule,
         MatTooltipModule,
-        MatRadioModule
+        MatRadioModule,
+        IgxPieChartModule,
+        MatListModule
     ],
     providers: [],
     bootstrap: [AppComponent]

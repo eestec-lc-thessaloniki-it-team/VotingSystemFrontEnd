@@ -1,1 +1,18 @@
-<p>poll-results works!</p>
+<h2>{{question}}</h2>
+<div *ngIf="data">
+    <igx-pie-chart [dataSource]="data"
+                   width="700px"
+                   height="500px"
+                   labelMemberPath="option"
+                   valueMemberPath="votes"
+                   [allowSliceSelection]="named"
+                   (sliceClick)="sliceClick($event)">
+    </igx-pie-chart>
+</div>
+<div *ngIf="named">
+    <h3>Named!</h3>
+    <mat-list *ngIf="selectedOption">
+        <h4>Names of ({{optionsLength}}) voters</h4>
+        <mat-list-item *ngFor="let item of votes[selectedOption]">{{item}}</mat-list-item>
+    </mat-list>
+</div>

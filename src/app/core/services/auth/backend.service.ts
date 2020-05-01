@@ -41,6 +41,15 @@ export class BackendService {
             this.domain + '/poll?id=' + id + '&session_id=' + localStorage.getItem('s')).toPromise();
     }
 
+    results(id, timestamp): Promise<VoteCreateResponse> {
+        const body = {
+            last_timestamp: timestamp,
+            session_id: localStorage.getItem('s')
+        };
+        return this.httpClient.post<VoteCreateResponse>(
+            this.domain + '/results?id=' + id, body).toPromise();
+    }
+
     vote(voteObject): Promise<VoteCreateResponse> {
         voteObject.session_id = localStorage.getItem('s');
         return this.httpClient.post<VoteCreateResponse>(

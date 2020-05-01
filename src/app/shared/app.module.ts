@@ -26,6 +26,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {PollVoteFormComponent} from './components/poll-vote-form/poll-vote-form.component';
 import {MatRadioModule} from '@angular/material/radio';
 import {RegisterFormComponent} from './components/register-form/register-form.component';
+import { PollResultsComponent } from './components/poll-results/poll-results.component';
 
 @NgModule({
     declarations: [
@@ -41,7 +42,8 @@ import {RegisterFormComponent} from './components/register-form/register-form.co
         LogoutComponent,
         PollCreateFormComponent,
         PollVoteFormComponent,
-        RegisterFormComponent
+        RegisterFormComponent,
+        PollResultsComponent
     ],
     imports: [
         HttpClientModule,

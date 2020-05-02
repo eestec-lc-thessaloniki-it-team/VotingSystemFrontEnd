@@ -36,15 +36,17 @@ export class LoginFormComponent implements OnInit {
     }
 
     onSubmit(loginData) {
-        this.service.login(loginData).then((response: LoginResponse) => {
-            if (response.response === 200) {
-                localStorage.setItem('s', response.wrapper.object.session_id);
-                this.router.navigate(['dummy']);
-            } else {
-                this.apiError = true;
-                this.reason = response.msg;
-            }
-        });
+        if (this.loginForm.valid) {
+            this.service.login(loginData).then((response: LoginResponse) => {
+                if (response.response === 200) {
+                    localStorage.setItem('s', response.wrapper.object.session_id);
+                    this.router.navigate(['dummy']);
+                } else {
+                    this.apiError = true;
+                    this.reason = response.msg;
+                }
+            });
+        }
     }
 
     get mail() {

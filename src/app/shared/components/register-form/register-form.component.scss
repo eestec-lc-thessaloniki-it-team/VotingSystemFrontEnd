@@ -1,4 +1,12 @@
 .register-form {
+
+    h1 {
+        margin: 64px auto;
+        text-align: center;
+        font-size: 64px;
+        letter-spacing: 12px;
+    }
+
     form {
         width: 80%;
         margin: 0 auto;
@@ -7,5 +15,22 @@
             color: black;
             width: 100%;
         }
+
+        .alert.alert-danger {
+            color: #E6252C;
+            font-size: 12px;
+        }
+
+        .button-container {
+            margin-top: 24px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            button[type="submit"] {
+                background: #E6252C;
+                color: white;
+            }
+        }
+
     }
 }

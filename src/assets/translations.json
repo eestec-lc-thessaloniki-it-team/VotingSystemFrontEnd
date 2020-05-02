@@ -43,7 +43,9 @@
         "open": "Open in new Tab"
     },
     "poll-vote": {
-        "title": "Vote"
+        "named": "Open Ballot",
+        "unnamed": "Secret Ballot",
+        "submit": "Submit"
     },
     "poll-results": {
         "title": "Vote"

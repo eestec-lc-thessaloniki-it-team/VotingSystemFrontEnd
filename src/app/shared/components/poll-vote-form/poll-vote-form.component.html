@@ -14,14 +14,14 @@
             </mat-radio-group>
         </div>
         <div class="container" *ngIf="!poll.wrapper.object.unique">
-            <mat-checkbox *ngFor="let option of chosenOption.controls; let i = index;" [formControl]="option">{{poll.wrapper.object.options[i]}}</mat-checkbox>
+            <mat-checkbox class="radio-group" *ngFor="let option of chosenOption.controls; let i = index;" [formControl]="option">{{poll.wrapper.object.options[i]}}</mat-checkbox>
 <!--            <mat-form-field >-->
 <!--            </mat-form-field >-->
         </div>
 
         <div class="full-width button-container">
-            <h3>{{((poll.wrapper.object.named) ? 'Named' : 'Unnamed') + ' voting'}}</h3>
-            <button [disabled]="!((this.poll.wrapper.object.unique && selected !== undefined) || (!this.poll.wrapper.object.unique && getOptions().length > 0))" mat-raised-button type="submit">Create Poll</button>
+            <h3>{{((poll.wrapper.object.named) ? translations['named'] : translations['unnamed'])}}</h3>
+            <button [disabled]="!((this.poll.wrapper.object.unique && selected !== undefined) || (!this.poll.wrapper.object.unique && getOptions().length > 0))" mat-raised-button type="submit">{{translations['submit']}}</button>
         </div>
     </form>
 </div>

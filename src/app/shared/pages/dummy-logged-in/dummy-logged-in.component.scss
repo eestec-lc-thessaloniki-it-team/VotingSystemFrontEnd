@@ -1,0 +1,33 @@
+.home-page {
+    .logout {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-right: 45px;
+        font-size: 66px;
+    }
+
+    .button-container {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        width: 100%;
+
+        button {
+            text-align: left;
+            padding: 48px;
+            display: block;
+            margin: 0 auto;
+            width: 400px;
+            height: 400px;
+            font-size: 57px;
+            color: #E6252C;
+            white-space: normal;
+            line-height: 1.35;
+            letter-spacing: 26px;
+            font-weight: bold;
+        }
+    }
+}

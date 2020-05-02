@@ -1,4 +1,5 @@
 <div *ngIf="translations" class="create-poll-form">
+    <mat-icon class="logout" routerLink="/logout">logout</mat-icon>
     <h1>{{translations['title']}}</h1>
 
     <form (ngSubmit)="onSubmit(pollCreateForm.value)" [formGroup]="pollCreateForm">

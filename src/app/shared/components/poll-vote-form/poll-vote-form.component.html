@@ -1,4 +1,5 @@
-<div *ngIf="translations && poll" class="create-poll-form">
+<div *ngIf="translations && poll" class="create-vote-form">
+    <mat-icon class="logout" routerLink="/logout">logout</mat-icon>
     <h1>{{translations['title']}}</h1>
     <h2>{{poll.wrapper.object.question}}</h2>
 

@@ -5,15 +5,23 @@
 
     <form (ngSubmit)="onSubmit()" [formGroup]="pollVoteForm">
 
-        <mat-radio-group *ngFor="let option of poll.wrapper.object.options; let i = index;"
-                         aria-label="Select an option"
-                         class="radio-group">
-            <mat-radio-button (click)="change(i)" [checked]="i === selected" [value]="i"
-                              class="radio-option">{{option}}</mat-radio-button>
-        </mat-radio-group>
+        <div class="container" *ngIf="poll.wrapper.object.unique">
+            <mat-radio-group *ngFor="let option of poll.wrapper.object.options; let i = index;"
+                             aria-label="Select an option"
+                             class="radio-group">
+                <mat-radio-button (click)="change(i)" [checked]="i === selected" [value]="i"
+                                  class="radio-option">{{option}}</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div class="container" *ngIf="!poll.wrapper.object.unique">
+            <mat-checkbox *ngFor="let option of chosenOption.controls; let i = index;" [formControl]="option">{{poll.wrapper.object.options[i]}}</mat-checkbox>
+<!--            <mat-form-field >-->
+<!--            </mat-form-field >-->
+        </div>
+
         <div class="full-width button-container">
             <h3>{{((poll.wrapper.object.named) ? 'Named' : 'Unnamed') + ' voting'}}</h3>
-            <button [disabled]="selected === undefined" mat-raised-button type="submit">Create Poll</button>
+            <button [disabled]="!((this.poll.wrapper.object.unique && selected !== undefined) || (!this.poll.wrapper.object.unique && getOptions().length > 0))" mat-raised-button type="submit">Create Poll</button>
         </div>
     </form>
 </div>

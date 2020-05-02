@@ -1,5 +1,6 @@
 .create-poll-form {
     .logout {
+        color: #E6252C;
         position: absolute;
         top: 0;
         right: 0;
@@ -9,6 +10,7 @@
     }
 
     .home {
+        color: #E6252C;
         position: absolute;
         top: 0;
         left: 0;
@@ -20,8 +22,13 @@
     h1 {
         margin: 64px auto;
         text-align: center;
-        font-size: 48px;
+        font-size: 28px;
+        font-weight: bold;
         letter-spacing: 12px;
+
+        @media screen and (min-width: 768px) {
+            font-size: 48px;
+        }
     }
 
     form {
@@ -53,6 +60,7 @@
 
         .button-container {
             text-align: center;
+            margin-bottom: 64px;
         }
 
         .shared-link {
@@ -63,6 +71,14 @@
                 cursor: pointer;
                 flex: 9;
             }
+        }
+
+        .add-button {
+            margin-bottom: 64px;
+        }
+
+        .other-options {
+            margin-bottom: 48px;
         }
     }
 }

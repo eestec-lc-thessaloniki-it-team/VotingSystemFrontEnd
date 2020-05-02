@@ -21,13 +21,13 @@
                 </button>
             </div>
         </mat-form-field>
-        <div class="half-width">
+        <div class="half-width add-button">
             <button (click)="addOption()" color="warn" mat-mini-fab type="button"><span class="material-icons"
                                                                                         tabindex="-1">add</span>
             </button>
         </div>
-        <div class="full-width">
-            <mat-slide-toggle class="half-width" formControlName="named">Unnamed/Named</mat-slide-toggle>
+        <div class="full-width other-options">
+            <mat-slide-toggle class="half-width" formControlName="named">{{named.value ? 'Named' : 'Unnamed'}}</mat-slide-toggle>
             <mat-checkbox class="half-width" formControlName="unique">Unique Answers</mat-checkbox>
         </div>
         <div class="full-width button-container">

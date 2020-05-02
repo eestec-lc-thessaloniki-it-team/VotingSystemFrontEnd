@@ -1,5 +1,6 @@
 .create-vote-form {
     .logout {
+        color: #E6252C;
         position: absolute;
         top: 0;
         right: 0;
@@ -9,6 +10,7 @@
     }
 
     .home {
+        color: #E6252C;
         position: absolute;
         top: 0;
         left: 0;
@@ -24,15 +26,20 @@
     }
 
     form {
-        width: 400px;
-        margin: 0 32px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: auto;
 
-        @media screen and (min-width: 768px) {
+        .container {
+
+            width: 70%;
             margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: auto;
+
+            @media screen and (min-width: 768px) {
+                margin: 0 auto;
+                width: 400px;
+            }
         }
 
 

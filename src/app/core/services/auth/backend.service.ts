@@ -11,8 +11,8 @@ import {VoteCreateResponse} from '../../../shared/models/VoteCreateResponse';
 })
 export class BackendService {
 
-    // domain = 'http://localhost:5000'; // DEV
-    domain = 'https://eestec.easyvote.ml:5000'; // PROD
+    domain = 'http://localhost:5000'; // DEV
+    // domain = 'https://eestec.easyvote.ml:5000'; // PROD
 
     constructor(private httpClient: HttpClient) {
     }
@@ -60,6 +60,12 @@ export class BackendService {
         voteObject.session_id = localStorage.getItem('s');
         return this.httpClient.post<VoteCreateResponse>(
             this.domain + '/vote?id=' + voteObject.id, voteObject).toPromise();
+    }
+
+    mvote(voteObject): Promise<VoteCreateResponse> {
+        voteObject.session_id = localStorage.getItem('s');
+        return this.httpClient.post<VoteCreateResponse>(
+            this.domain + '/mvote?id=' + voteObject.id, voteObject).toPromise();
     }
 
 }

@@ -42,7 +42,7 @@ export class PollCreateFormComponent implements OnInit {
             if (response.response === 200) {
                 this.pollCreateForm.reset();
                 // this.sharedLink = 'http://localhost:4200/poll/vote?id=' + response.id;  // DEV
-                this.sharedLink = 'https://eestec.easyvote.ml//poll/vote?id=' + response.id;  // PROD
+                this.sharedLink = 'https://eestec.easyvote.ml/poll/vote?id=' + response.id;  // PROD
             }
         });
     }
@@ -71,6 +71,10 @@ export class PollCreateFormComponent implements OnInit {
 
     goToPoll() {
         window.open(this.sharedLink, '_blank');
+    }
+
+    get named() {
+        return this.pollCreateForm.get('named');
     }
 
 }

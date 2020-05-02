@@ -1,14 +1,20 @@
 .home-page {
     .logout {
+        color: #E6252C;
         position: absolute;
         top: 0;
         right: 0;
-        margin-right: 45px;
-        font-size: 66px;
+        margin-right: 22px;
+        font-size: 42px;
         cursor: pointer;
+        @media screen and (min-width: 768px) {
+            margin-right: 45px;
+            font-size: 66px;
+        }
     }
 
     .home {
+        color: #E6252C;
         position: absolute;
         top: 0;
         left: 0;
@@ -27,17 +33,26 @@
 
         button {
             text-align: left;
-            padding: 48px;
+            padding: 17px;
             display: block;
             margin: 0 auto;
-            width: 400px;
-            height: 400px;
-            font-size: 57px;
+            width: 200px;
+            height: 200px;
+            font-size: 32px;
             color: #E6252C;
             white-space: normal;
-            line-height: 1.35;
-            letter-spacing: 26px;
+            line-height: 1.2;
+            letter-spacing: 14px;
             font-weight: bold;
+
+            @media screen and (min-width: 768px) {
+                padding: 48px;
+                width: 400px;
+                height: 400px;
+                font-size: 57px;
+                line-height: 1.35;
+                letter-spacing: 26px;
+            }
         }
     }
 }

@@ -104,7 +104,6 @@ export class PollResultsComponent implements OnInit, OnDestroy {
         } else {
             this.selectedOption = null;
         }
-        console.log(this.selectedOption);
     }
 
     ngOnDestroy() {

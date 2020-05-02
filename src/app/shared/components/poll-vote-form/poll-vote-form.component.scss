@@ -5,10 +5,35 @@
         right: 0;
         margin-right: 12px;
         font-size: 35px;
+        cursor: pointer;
     }
+
+    .home {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin-right: 12px;
+        font-size: 35px;
+        cursor: pointer;
+    }
+
+    h2 {
+        margin: 64px auto;
+        text-align: center;
+        font-size: 48px;
+    }
+
     form {
-        width: 80%;
-        margin: 0 auto;
+        width: 400px;
+        margin: 0 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: auto;
+
+        @media screen and (min-width: 768px) {
+            margin: 0 auto;
+        }
 
 
         .option-container {
@@ -45,6 +70,10 @@
                 cursor: pointer;
                 flex: 9;
             }
+        }
+
+        .radio-group {
+            margin-bottom: 32px;
         }
     }
 }

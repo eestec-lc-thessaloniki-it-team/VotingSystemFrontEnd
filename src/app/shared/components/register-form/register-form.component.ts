@@ -17,7 +17,7 @@ export class RegisterFormComponent implements OnInit {
     registerForm: FormGroup;
     passwordError: string;
 
-    constructor(private formBuilder: FormBuilder, private service: BackendService, private router: Router) {
+    constructor(private formBuilder: FormBuilder, private service: BackendService, public router: Router) {
         this.registerForm = this.formBuilder.group({
             name: new FormControl('', [
                 Validators.required
@@ -37,6 +37,22 @@ export class RegisterFormComponent implements OnInit {
         });
     }
 
+    get name() {
+        return this.registerForm.get('name');
+    }
+
+    get mail() {
+        return this.registerForm.get('mail');
+    }
+
+    get password() {
+        return this.registerForm.get('password');
+    }
+
+    get passwordRe() {
+        return this.registerForm.get('passwordRe');
+    }
+
     ngOnInit(): void {
     }
 
@@ -48,7 +64,7 @@ export class RegisterFormComponent implements OnInit {
             this.service.register(registerData).then((response: LoginResponse) => {
                 if (response.response === 200) {
                     localStorage.setItem('s', response.wrapper.object.session_id);
-                    this.router.navigate(['dummy']);
+                    this.router.navigate(['home']);
                 }
             });
         }
@@ -64,22 +80,6 @@ export class RegisterFormComponent implements OnInit {
         }
         this.passwordError = '';
         return true;
-    }
-
-    get name() {
-        return this.registerForm.get('name');
-    }
-
-    get mail() {
-        return this.registerForm.get('mail');
-    }
-
-    get password() {
-        return this.registerForm.get('password');
-    }
-
-    get passwordRe() {
-        return this.registerForm.get('passwordRe');
     }
 
 }

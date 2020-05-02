@@ -38,7 +38,11 @@ export class PollVoteFormComponent implements OnInit {
                         }
                     });
                 } else {
-                    this.router.navigate(['/poll/results']);
+                    this.router.navigate(['/poll/results'], {
+                        queryParams: {
+                            id: this.id
+                        }
+                    });
                 }
             });
         });
@@ -50,7 +54,11 @@ export class PollVoteFormComponent implements OnInit {
             chosen_option: this.selected
         };
         this.service.vote(voteData).then((response: VoteCreateResponse) => {
-            this.router.navigate(['/poll/results']);
+            this.router.navigate(['/poll/results'], {
+                queryParams: {
+                    id: this.id
+                }
+            });
         });
     }
 

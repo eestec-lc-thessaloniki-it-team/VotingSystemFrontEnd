@@ -1,13 +1,15 @@
 <div *ngIf="translations && poll" class="create-vote-form">
     <mat-icon class="logout" routerLink="/logout">logout</mat-icon>
-    <h1>{{translations['title']}}</h1>
+    <mat-icon class="home" routerLink="/home">home</mat-icon>
     <h2>{{poll.wrapper.object.question}}</h2>
 
     <form (ngSubmit)="onSubmit()" [formGroup]="pollVoteForm">
 
         <mat-radio-group *ngFor="let option of poll.wrapper.object.options; let i = index;"
-                         aria-label="Select an option">
-            <mat-radio-button (click)="change(i)" [checked]="i === selected" [value]="i">{{option}}</mat-radio-button>
+                         aria-label="Select an option"
+                         class="radio-group">
+            <mat-radio-button (click)="change(i)" [checked]="i === selected" [value]="i"
+                              class="radio-option">{{option}}</mat-radio-button>
         </mat-radio-group>
         <div class="full-width button-container">
             <h3>{{((poll.wrapper.object.named) ? 'Named' : 'Unnamed') + ' voting'}}</h3>

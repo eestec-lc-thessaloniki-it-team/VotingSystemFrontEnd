@@ -1,13 +1,14 @@
 <h2>{{question}}</h2>
 <mat-icon class="logout" routerLink="/logout">logout</mat-icon>
+<mat-icon class="home" routerLink="/home">home</mat-icon>
 <div *ngIf="data">
-    <igx-pie-chart [dataSource]="data"
-                   width="700px"
+    <igx-pie-chart (sliceClick)="sliceClick($event)"
+                   [allowSliceSelection]="named"
+                   [dataSource]="data"
                    height="500px"
                    labelMemberPath="option"
                    valueMemberPath="votes"
-                   [allowSliceSelection]="named"
-                   (sliceClick)="sliceClick($event)">
+                   width="700px">
     </igx-pie-chart>
 </div>
 <div *ngIf="named">

@@ -28,6 +28,11 @@ export class PollResultsComponent implements OnInit, OnDestroy {
         this.sliceClick = this.sliceClick.bind(this);
     }
 
+    get optionsLength() {
+        // @ts-ignore
+        return this.votes[this.selectedOption].length;
+    }
+
     ngOnInit() {
         this.data = [];
         this.activatedRoute.queryParams.subscribe(params => {
@@ -104,11 +109,6 @@ export class PollResultsComponent implements OnInit, OnDestroy {
 
     ngOnDestroy() {
         clearInterval(this.intervalId);
-    }
-
-    get optionsLength() {
-        // @ts-ignore
-        return this.votes[this.selectedOption].length;
     }
 
 }

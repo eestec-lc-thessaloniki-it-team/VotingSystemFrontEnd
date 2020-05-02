@@ -18,7 +18,7 @@ export class LoginFormComponent implements OnInit {
     apiError;
     reason;
 
-    constructor(private formBuilder: FormBuilder, private service: BackendService, private router: Router) {
+    constructor(private formBuilder: FormBuilder, private service: BackendService, public router: Router) {
         this.loginForm = this.formBuilder.group({
             mail: new FormControl('', [
                 Validators.required,
@@ -32,6 +32,14 @@ export class LoginFormComponent implements OnInit {
         this.apiError = false;
     }
 
+    get mail() {
+        return this.loginForm.get('mail');
+    }
+
+    get password() {
+        return this.loginForm.get('password');
+    }
+
     ngOnInit(): void {
     }
 
@@ -40,21 +48,13 @@ export class LoginFormComponent implements OnInit {
             this.service.login(loginData).then((response: LoginResponse) => {
                 if (response.response === 200) {
                     localStorage.setItem('s', response.wrapper.object.session_id);
-                    this.router.navigate(['dummy']);
+                    this.router.navigate(['home']);
                 } else {
                     this.apiError = true;
                     this.reason = response.msg;
                 }
             });
         }
-    }
-
-    get mail() {
-        return this.loginForm.get('mail');
-    }
-
-    get password() {
-        return this.loginForm.get('password');
     }
 
 }

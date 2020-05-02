@@ -31,7 +31,7 @@ const routes: Routes = [
             }
         ]
     },
-    {path: 'dummy', component: DummyLoggedInComponent, canActivate: [AuthGuard]}
+    {path: 'home', component: DummyLoggedInComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({

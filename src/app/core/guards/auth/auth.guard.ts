@@ -23,7 +23,7 @@ export class AuthGuard implements CanActivate {
                 case '/login':
                 case '/register':
                     return this.handleLoginAndRegister(isAuthenticated);
-                case '/dummy':
+                case '/home':
                 case '/poll/create':
                 case '/poll/results':
                 case '/poll/vote':
@@ -43,7 +43,7 @@ export class AuthGuard implements CanActivate {
 
     private handleHomePage(isAuthenticated: boolean): boolean {
         if (isAuthenticated) {
-            this.router.navigate(['dummy']);
+            this.router.navigate(['home']);
         } else {
             this.router.navigate(['login']);
         }
@@ -60,7 +60,7 @@ export class AuthGuard implements CanActivate {
 
     private handleLoginAndRegister(isAuthenticated: boolean): boolean {
         if (isAuthenticated) {
-            this.router.navigate(['dummy']);
+            this.router.navigate(['home']);
             return false;
         }
         return true;

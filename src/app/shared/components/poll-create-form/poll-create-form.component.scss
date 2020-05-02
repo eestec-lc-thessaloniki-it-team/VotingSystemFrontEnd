@@ -5,7 +5,25 @@
         right: 0;
         margin-right: 12px;
         font-size: 35px;
+        cursor: pointer;
     }
+
+    .home {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin-right: 12px;
+        font-size: 35px;
+        cursor: pointer;
+    }
+
+    h1 {
+        margin: 64px auto;
+        text-align: center;
+        font-size: 48px;
+        letter-spacing: 12px;
+    }
+
     form {
         width: 80%;
         margin: 0 auto;

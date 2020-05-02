@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {TranslationSection} from '../../models/translations';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {BackendService} from '../../../core/services/auth/backend.service';
 import {LoginResponse} from '../../models/LoginResponse';
 import {Router} from '@angular/router';
@@ -15,12 +15,21 @@ export class LoginFormComponent implements OnInit {
     @Input()
     translations: TranslationSection;
     loginForm: FormGroup;
+    apiError;
+    reason;
 
     constructor(private formBuilder: FormBuilder, private service: BackendService, private router: Router) {
         this.loginForm = this.formBuilder.group({
-            mail: '',
-            password: ''
+            mail: new FormControl('', [
+                Validators.required,
+                Validators.email
+            ]),
+            password: new FormControl('', [
+                Validators.required,
+                Validators.minLength(6)
+            ])
         });
+        this.apiError = false;
     }
 
     ngOnInit(): void {
@@ -31,8 +40,19 @@ export class LoginFormComponent implements OnInit {
             if (response.response === 200) {
                 localStorage.setItem('s', response.wrapper.object.session_id);
                 this.router.navigate(['dummy']);
+            } else {
+                this.apiError = true;
+                this.reason = response.msg;
             }
         });
+    }
+
+    get mail() {
+        return this.loginForm.get('mail');
+    }
+
+    get password() {
+        return this.loginForm.get('password');
     }
 
 }

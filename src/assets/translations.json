@@ -32,7 +32,15 @@
     },
     "poll-create": {
         "title": "Create Poll",
-        "option": "Option"
+        "question": "Question",
+        "named": "Named",
+        "unnamed": "Unnamed",
+        "unique": "Unique Answers",
+        "create": "Create Poll",
+        "option": "Option",
+        "shared": "Shared Link",
+        "copy": "Click to copy",
+        "open": "Open in new Tab"
     },
     "poll-vote": {
         "title": "Vote"

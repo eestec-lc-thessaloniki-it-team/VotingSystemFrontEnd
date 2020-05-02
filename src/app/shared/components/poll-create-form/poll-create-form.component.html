@@ -6,7 +6,7 @@
     <form (ngSubmit)="onSubmit(pollCreateForm.value)" [formGroup]="pollCreateForm">
 
         <mat-form-field class="full-width">
-            <mat-label>Question</mat-label>
+            <mat-label>{{translations['question']}}</mat-label>
             <input formControlName="question" matInput type="text">
         </mat-form-field>
         <mat-form-field *ngFor="let option of options.controls; let i=index" class="option-container">
@@ -15,7 +15,6 @@
                 <input [formControl]="option" matInput>
 
                 <button (click)="removeOption(i)" [disabled]="options.length < 3"
-                        aria-label="Example icon-button with a heart icon"
                         mat-icon-button tabindex="-1" type="button">
                     <mat-icon>remove_circle_outline</mat-icon>
                 </button>
@@ -27,23 +26,23 @@
             </button>
         </div>
         <div class="full-width other-options">
-            <mat-slide-toggle class="half-width" formControlName="named">{{named.value ? 'Named' : 'Unnamed'}}</mat-slide-toggle>
-            <mat-checkbox class="half-width" formControlName="unique">Unique Answers</mat-checkbox>
+            <mat-slide-toggle class="half-width" formControlName="named">{{named.value ? translations['named'] : translations['unnamed']}}</mat-slide-toggle>
+            <mat-checkbox class="half-width" formControlName="unique">{{translations['unique']}}</mat-checkbox>
         </div>
         <div class="full-width button-container">
-            <button mat-raised-button type="submit">Create Poll</button>
+            <button mat-raised-button type="submit">{{translations['create']}}</button>
         </div>
         <div *ngIf="sharedLink" class="full-width shared-link">
             <mat-form-field class="full-width">
-                <mat-label>Shared Link</mat-label>
+                <mat-label>{{translations['shared']}}</mat-label>
                 <input (click)="copySharedLink" [value]="sharedLink" disabled="true" matInput type="text">
             </mat-form-field>
             <button (click)="copySharedLink()" aria-label="Example icon-button with a heart icon"
-                    mat-icon-button matTooltip="Click to copy" tabindex="-1" type="button">
+                    mat-icon-button [matTooltip]="translations['copy']" tabindex="-1" type="button">
                 <mat-icon>file_copy</mat-icon>
             </button>
             <button (click)="goToPoll()" aria-label="Example icon-button with a heart icon" mat-icon-button
-                    matTooltip="Open in new Tab" tabindex="-1" type="button">
+                    [matTooltip]="translations['open']" tabindex="-1" type="button">
                 <mat-icon>launch</mat-icon>
             </button>
         </div>

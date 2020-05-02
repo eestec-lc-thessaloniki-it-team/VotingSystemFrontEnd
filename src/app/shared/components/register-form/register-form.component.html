@@ -4,50 +4,50 @@
     <form (ngSubmit)="onSubmit(registerForm.value)" [formGroup]="registerForm">
 
         <mat-form-field class="full-width">
-            <mat-label>Full Name</mat-label>
-            <input formControlName="name" matInput placeholder="Enter your full name" type="text">
+            <mat-label>{{translations['full-name']}}</mat-label>
+            <input formControlName="name" matInput [placeholder]="translations['full-name-placeholder']" type="text">
         </mat-form-field>
         <mat-form-field class="full-width">
-            <mat-label>Email</mat-label>
-            <input formControlName="mail" matInput placeholder="Enter your email">
+            <mat-label>{{translations['email']}}</mat-label>
+            <input formControlName="mail" matInput [placeholder]="translations['email-placeholder']">
         </mat-form-field>
         <div *ngIf="mail.invalid && (mail.dirty || mail.touched)"
              class="alert alert-danger">
 
             <div *ngIf="mail.errors.required">
-                Email is required.
+                {{translations['email-error-required']}}
             </div>
             <div *ngIf="mail.errors.email">
-                Email must be a valid email address.
+                {{translations['email-error-valid']}}
             </div>
         </div>
         <mat-form-field class="full-width">
-            <mat-label>Password</mat-label>
-            <input formControlName="password" matInput placeholder="Enter your password" type="password">
+            <mat-label>{{translations['password']}}</mat-label>
+            <input formControlName="password" matInput [placeholder]="translations['password-placeholder']" type="password">
         </mat-form-field>
         <div *ngIf="password.invalid && (password.dirty || password.touched)"
              class="alert alert-danger">
 
             <div *ngIf="password.errors.required">
-                Password is required.
+                {{translations['password-error-required']}}
             </div>
             <div *ngIf="password.errors.minlength">
-                Password must be at least 6 characters long.
+                {{translations['password-error-length']}}
             </div>
         </div>
         <mat-form-field class="full-width">
-            <mat-label>Repeat Password</mat-label>
+            <mat-label>{{translations['password-repeat']}}</mat-label>
             <input (keyup)="checkPasswords(registerForm)" formControlName="passwordRe" matInput
-                   placeholder="Re-enter your password" type="password">
+                   [placeholder]="translations['password-repeat-placeholder']" type="password">
         </mat-form-field>
         <div *ngIf="passwordRe.invalid && (passwordRe.dirty || passwordRe.touched)"
              class="alert alert-danger">
 
             <div *ngIf="passwordRe.errors.required">
-                Password is required.
+                {{translations['password-error-required']}}
             </div>
             <div *ngIf="passwordRe.errors.minlength">
-                Password must be at least 6 characters long.
+                {{translations['password-error-length']}}
             </div>
         </div>
         <div *ngIf="passwordError"
@@ -56,8 +56,8 @@
         </div>
 
         <div class="button-container">
-            <button mat-raised-button type="submit">Register</button>
-            <button (click)="router.navigate(['login'])" mat-raised-button type="button">Login</button>
+            <button mat-raised-button type="submit">{{translations['register']}}</button>
+            <button (click)="router.navigate(['login'])" mat-raised-button type="button">{{translations['login']}}</button>
         </div>
 
     </form>

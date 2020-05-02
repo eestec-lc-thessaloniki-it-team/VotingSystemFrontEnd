@@ -75,7 +75,7 @@ export class RegisterFormComponent implements OnInit {
         const confirmPass = group.get('passwordRe').value;
 
         if (pass !== confirmPass) {
-            this.passwordError = 'Passwords given don\'t match.';
+            this.passwordError = this.translations['password-repeat-error-same'];
             return false;
         }
         this.passwordError = '';

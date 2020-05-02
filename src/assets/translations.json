@@ -1,6 +1,34 @@
 {
     "login": {
-        "title": "Voting"
+        "title": "Login",
+        "email": "Email",
+        "email-placeholder": "jane.doe@ic.fbi.gov",
+        "email-error-required": "Email is required.",
+        "email-error-valid": "Email must be a valid email address.",
+        "password": "Password",
+        "password-placeholder": "Password",
+        "password-error-required": "Password is required.",
+        "password-error-length": "Password must be at least 6 characters long.",
+        "login": "Login",
+        "register": "Register"
+    },
+    "register": {
+        "title": "Register",
+        "full-name": "Full Name",
+        "full-name-placeholder": "Enter your full name",
+        "email": "Email",
+        "email-placeholder": "Enter your email",
+        "email-error-required": "Email is required.",
+        "email-error-valid": "Email must be a valid email address.",
+        "password": "Password",
+        "password-placeholder": "Enter your password",
+        "password-error-required": "Password is required.",
+        "password-error-length": "Password must be at least 6 characters long.",
+        "password-repeat": "Repeat Password",
+        "password-repeat-placeholder": "Re-enter your password",
+        "password-repeat-error-same": "Passwords given don't match.",
+        "login": "Login",
+        "register": "Register"
     },
     "poll-create": {
         "title": "Create Poll",
@@ -12,7 +40,7 @@
     "poll-results": {
         "title": "Vote"
     },
-    "register": {
-        "title": "Vote"
+    "home": {
+        "create-poll-title": "Create Poll Create Poll"
     }
 }

@@ -1,8 +1,8 @@
-<div class="home-page">
+<div class="home-page" *ngIf="homeTranslations">
     <mat-icon class="logout" routerLink="/logout">logout</mat-icon>
 
     <div class="button-container">
-        <button mat-raised-button routerLink="/poll/create">Create Poll Create Poll</button>
+        <button mat-raised-button routerLink="/poll/create">{{homeTranslations['create-poll-title']}}</button>
     </div>
 </div>
 

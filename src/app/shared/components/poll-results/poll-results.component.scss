@@ -17,3 +17,21 @@
     font-size: 35px;
     cursor: pointer;
 }
+
+.data {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 64px;
+
+    @media screen and (min-width: 768px) {
+        justify-content: center;
+    }
+}
+
+h2 {
+    margin: 64px auto;
+    text-align: center;
+    font-size: 64px;
+    letter-spacing: 12px;
+}

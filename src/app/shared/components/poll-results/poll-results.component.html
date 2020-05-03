@@ -1,7 +1,7 @@
 <h2>{{question}}</h2>
 <mat-icon class="logout" routerLink="/logout">logout</mat-icon>
 <mat-icon class="home" routerLink="/home">home</mat-icon>
-<div *ngIf="data">
+<div class="data" *ngIf="data">
     <igx-pie-chart (sliceClick)="sliceClick($event)"
                    [allowSliceSelection]="named"
                    [dataSource]="data"
@@ -10,11 +10,8 @@
                    valueMemberPath="votes"
                    width="700px">
     </igx-pie-chart>
-</div>
-<div *ngIf="named">
-    <h3>Named!</h3>
-    <mat-list *ngIf="selectedOption">
+    <mat-list *ngIf="named && selectedOption">
         <h4>Names of ({{optionsLength}}) voters</h4>
-        <mat-list-item *ngFor="let item of votes[selectedOption]">{{item}}</mat-list-item>
+        <mat-list-item *ngFor="let item of votes[selectedOption]"><li>{{item}}</li></mat-list-item>
     </mat-list>
 </div>

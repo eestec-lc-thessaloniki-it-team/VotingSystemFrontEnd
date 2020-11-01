@@ -12,7 +12,7 @@ import {VoteCreateResponse} from '../../../shared/models/VoteCreateResponse';
 export class BackendService {
 
     // domain = 'http://localhost:5000'; // DEV
-    domain = 'https://shop.ousia.gr:5000'; // PROD
+    domain = 'https://demo.lilywhitelaundry.gr:5000'; // PROD
 
     constructor(private httpClient: HttpClient) {
     }
